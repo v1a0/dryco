@@ -11,10 +11,10 @@ def decorator_with_kwargs(orig_decorator: callable):
                have implemented default value
 
     Example:
-    >>> import superpython as sp
+    >>> import dryco as dc
     >>>
     >>>
-    >>> @sp.decorator_with_kwargs
+    >>> @dc.decorator_with_kwargs
     >>> def add_greetings(original_func: callable = None, message=None):
     >>>     'Print greeting message before function ran'
     >>>

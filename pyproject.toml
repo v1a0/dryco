@@ -3,15 +3,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "superpython"
+name = "dryco"
 version = "0.0.1.dev1"
 authors = [
   { name="v1a0", email="contact@v1a0.dev" },
 ]
 description = "Collection of super useful tools/addons/extensions for any python project!"
-homepage="https://github.com/v1a0/superpython"
-repository="https://github.com/v1a0/superpython"
-documentation="https://github.com/v1a0/superpython/docs"
+homepage="https://github.com/v1a0/dryco"
+repository="https://github.com/v1a0/dryco"
+documentation="https://github.com/v1a0/dryco/docs"
 keywords=['tools', 'addon', 'ddsfsdf']
 readme = "README.md"
 requires-python = ">=3.7"
@@ -25,6 +25,6 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/v1a0/superpython"
-"Bug Tracker" = "https://github.com/v1a0/superpython/issues"
+"Homepage" = "https://github.com/v1a0/dryco"
+"Bug Tracker" = "https://github.com/v1a0/dryco/issues"
 
