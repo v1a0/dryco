@@ -4,7 +4,7 @@ import unittest
 class TestDecorators(unittest.TestCase):
 
     def test_decorator_with_kwargs__funcs(self):
-        from src.decorators import decorator_with_kwargs
+        from dryco.decorators import decorator_with_kwargs
 
         @decorator_with_kwargs
         def add_5_to_result(original_func: callable = None, adder=None):
@@ -70,7 +70,7 @@ class TestDecorators(unittest.TestCase):
             sum_6_n_m(imposible_kwarg="Something insane!!!")
 
     def test_decorator_with_kwargs__methods(self):
-        from src.decorators import decorator_with_kwargs
+        from dryco.decorators import decorator_with_kwargs
 
         @decorator_with_kwargs
         def louder_n_times(original_func: callable = None, n=None):
@@ -112,7 +112,7 @@ class TestDecorators(unittest.TestCase):
         self.assertEqual(a_dog.best_bark(), "Bark!!!")
 
     def test_method_not_allowed(self):
-        from src.decorators import method_not_allowed
+        from dryco.decorators import method_not_allowed
 
         class Dog:
 
@@ -149,6 +149,8 @@ class TestDecorators(unittest.TestCase):
         self.assertRaises(ConnectionResetError, a_dog.meow_4)
         self.assertRaises(ConnectionResetError, a_dog.meow_5)
 
+    import dryco
+    print(dryco.__about__)
 
 if __name__ == '__main__':
     unittest.main()

@@ -19,11 +19,8 @@ def decorator_with_kwargs(orig_decorator: callable):
     >>>     'Print greeting message before function ran'
     >>>
     >>>     def func_with_greetings(*args, **kwargs):
-    >>>         if message is None:  # print "Hello, world!" if message isn't set
-    >>>             print("Hello, world!")
-    >>>         else:
-    >>>             print(message)
-    >>>         original_func(*args, **kwargs)  # call original function
+    >>>         print(message or "Hello, world!") # print "Hello, world!" if message isn't set
+    >>>         original_func(*args, **kwargs)    # call original function
     >>>
     >>>     return func_with_greetings
     >>>
