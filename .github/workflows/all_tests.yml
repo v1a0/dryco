@@ -6,14 +6,14 @@ on:
       - main
       - dev
       - 'dev/**'
+      - 'test'
   pull_request:
     branches:
       - main
       - dev
       - 'dev/**'
-  merge:
-    - main
-
+      - 'test'
+  
 jobs:
   build:
     runs-on: ubuntu-latest
