@@ -1,10 +1,9 @@
 import unittest
 
 
-class TestDecorators(unittest.TestCase):
-
+class TestDecoratorWithKwargs(unittest.TestCase):
     def test_decorator_with_kwargs__funcs(self):
-        from src.decorators import decorator_with_kwargs
+        from dryco.decorators import decorator_with_kwargs
 
         @decorator_with_kwargs
         def add_5_to_result(original_func: callable = None, adder=None):
@@ -70,7 +69,7 @@ class TestDecorators(unittest.TestCase):
             sum_6_n_m(imposible_kwarg="Something insane!!!")
 
     def test_decorator_with_kwargs__methods(self):
-        from src.decorators import decorator_with_kwargs
+        from dryco.decorators import decorator_with_kwargs
 
         @decorator_with_kwargs
         def louder_n_times(original_func: callable = None, n=None):
@@ -110,44 +109,6 @@ class TestDecorators(unittest.TestCase):
         self.assertEqual(a_dog.bark(), "Bark!")
         self.assertEqual(a_dog.regular_bark(), a_dog.bark())
         self.assertEqual(a_dog.best_bark(), "Bark!!!")
-
-    def test_method_not_allowed(self):
-        from src.decorators import method_not_allowed
-
-        class Dog:
-
-            @method_not_allowed
-            def meow(self):
-                pass
-
-            @method_not_allowed
-            def meow_1(self, arg):
-                pass
-
-            @method_not_allowed
-            def meow_2(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_3(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_4(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_5(self, arg, kwarg):
-                pass
-
-        a_dog = Dog()
-
-        self.assertRaises(Exception, a_dog.meow)
-        self.assertRaises(Exception, a_dog.meow_1)
-        self.assertRaises(Exception, a_dog.meow_2)
-        self.assertRaises(ConnectionResetError, a_dog.meow_3)
-        self.assertRaises(ConnectionResetError, a_dog.meow_4)
-        self.assertRaises(ConnectionResetError, a_dog.meow_5)
 
 
 if __name__ == '__main__':
