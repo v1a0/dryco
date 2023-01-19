@@ -1,8 +1,7 @@
 import unittest
 
 
-class TestDecorators(unittest.TestCase):
-
+class TestDecoratorWithKwargs(unittest.TestCase):
     def test_decorator_with_kwargs__funcs(self):
         from dryco.decorators import decorator_with_kwargs
 
@@ -111,46 +110,6 @@ class TestDecorators(unittest.TestCase):
         self.assertEqual(a_dog.regular_bark(), a_dog.bark())
         self.assertEqual(a_dog.best_bark(), "Bark!!!")
 
-    def test_method_not_allowed(self):
-        from dryco.decorators import method_not_allowed
-
-        class Dog:
-
-            @method_not_allowed
-            def meow(self):
-                pass
-
-            @method_not_allowed
-            def meow_1(self, arg):
-                pass
-
-            @method_not_allowed
-            def meow_2(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_3(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_4(self, arg, kwarg):
-                pass
-
-            @method_not_allowed(exception=ConnectionResetError(1))
-            def meow_5(self, arg, kwarg):
-                pass
-
-        a_dog = Dog()
-
-        self.assertRaises(Exception, a_dog.meow)
-        self.assertRaises(Exception, a_dog.meow_1)
-        self.assertRaises(Exception, a_dog.meow_2)
-        self.assertRaises(ConnectionResetError, a_dog.meow_3)
-        self.assertRaises(ConnectionResetError, a_dog.meow_4)
-        self.assertRaises(ConnectionResetError, a_dog.meow_5)
-
-    import dryco
-    print(dryco.__about__)
 
 if __name__ == '__main__':
     unittest.main()
