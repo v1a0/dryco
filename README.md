@@ -6,6 +6,7 @@
 
 
 ### PyPi
+
 | Branch           | Status                                |
 |:-----------------|:--------------------------------------|
 | Latest version   | [![pypi-latest-img]][pypi-latest-src] |
@@ -13,6 +14,7 @@
 
 
 ### Tests statuses
+
 | Branch  |              Status               |
 |:--------|:---------------------------------:|
 | dev     |   [![tests-dev-img]][tests-src]   |
