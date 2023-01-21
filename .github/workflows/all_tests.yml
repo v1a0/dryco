@@ -7,12 +7,14 @@ on:
       - dev
       - 'dev/**'
       - 'test'
+      - release
   pull_request:
     branches:
       - main
       - dev
       - 'dev/**'
       - 'test'
+      - release
   
 jobs:
   build:
